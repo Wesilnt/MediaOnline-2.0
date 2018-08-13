@@ -1,0 +1,122 @@
+//为定义对象判断
+function isUndefined(o) {
+  return typeof (o) == "undefined" || "undefined" == o
+}
+var base = {
+  waitTime: function (mss) {
+    var days = parseInt(mss / (1000 * 60 * 60 * 24));
+    var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = parseInt((mss % (1000 * 60)) / 1000);
+    var _hours = hours < 10 ? '0' + hours : hours
+    var _minutes = minutes < 10 ? '0' + minutes : minutes
+    var _seconds = seconds < 10 ? '0' + seconds : seconds
+    if (days > 0) {
+      return days + " : " + _hours + " : " + _minutes + " : " + _seconds;
+    } else if (hours > 0) {
+      return _hours + " : " + _minutes + " : " + _seconds;
+    } else {
+      return _minutes + " : " + _seconds;
+    }
+
+  },
+  formatDuring: function (mss) {
+    mss = Math.round(mss)
+    var days = parseInt(mss / (60 * 60 * 24));
+    var hours = parseInt((mss % (60 * 60 * 24)) / (60 * 60));
+    var minutes = parseInt((mss % (60 * 60)) / (60));
+    var seconds = (mss % 60);
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return minutes + ":" + seconds;
+  },
+  //时间格式成HH:mm:ss
+  formatHMS: function (mss) {
+    mss = parseInt(mss)
+    var hours = parseInt(mss / 3600)
+    var minutes = parseInt(mss % 3600 / 60)
+    var seconds = parseInt(mss % 3600 % 60)
+    hours = hours < 10 ? "0" + hours : hours
+    minutes = minutes < 10 ? "0" + minutes : minutes
+    seconds = seconds < 10 ? "0" + seconds : seconds
+    return hours + ":" + minutes + ":" + seconds
+  },
+  //时间格式成mm:ss
+  formatMS: function (mss) {
+    mss = isUndefined(mss) ? 0 : parseInt(mss)
+    mss = isNaN(mss) ? 0 : mss
+    var minutes = parseInt(mss / 60)
+    var seconds = parseInt(mss % 60)
+    minutes = minutes < 10 ? "0" + minutes : minutes
+    seconds = seconds < 10 ? "0" + seconds : seconds
+    return minutes + ":" + seconds
+  },
+  //评论时间转换
+  formatYMD: function (createTime) {
+    var creaDate = getDate(createTime)
+    var y = creaDate.getFullYear()
+    var m = creaDate.getMonth() + 1
+    var d = creaDate.getDate()
+    return y + "." + (m < 10 ? "0" + m : m) + "." + (d < 10 ? "0" + d : d)
+  },
+
+
+  //转换学习时间百分比
+  formatPercent: function (learnTime, totalTime) {
+    var learn = isUndefined(learnTime) ? 0 : parseInt(learnTime)
+    var total = isUndefined(totalTime) ? 0 : parseInt(totalTime)
+    learn = isNaN(learn) ? 0 : learn
+    total = isNaN(total) ? 0 : total
+    if (learn <= 0 || total <= 0) return ""
+    if (learn >= total) return "已收听100%"
+    var percent = parseInt(learn * 100 / total)
+    return "已收听" + (percent <= 1 ? 1 : percent) + "%"
+  },
+  //课节序号
+  formatSortNum: function (isFree, index) {
+    // if (!isFree) return 0 == index ? "【试听】" : index
+    return (++index) + " . "
+  },
+  //计算audiocontroller不同页面距离底部距离
+  bottom: function (bottom) {
+    return -(136 + bottom)
+  },
+
+  //
+  audioIcon: function (isPause) {
+    return isPause ? "/images/ic_play.png" : "/images/ic_pause.png"
+  },
+
+  //拼团人数转汉字
+  handleGroupBuyPersonCount: function (count) {
+    switch (count) {
+      case 3: 
+          return "三"
+         break 
+
+      case 6:
+        return "六"
+        break
+    }
+  },
+
+  dLog:function (str) {
+    console.log(str)
+    return true
+  }
+}
+module.exports = {
+  waitTime: base.waitTime,
+  formatDuring: base.formatDuring,
+  audioIcon: base.audioIcon,
+  formatYMD: base.formatYMD,
+  formatHMS: base.formatHMS,
+  formatMS: base.formatMS,
+  formatPercent: base.formatPercent,
+  formatSortNum: base.formatSortNum,
+  formatTimeStr: base.formatTimeStr,
+  bottom: base.bottom,
+  handleGroupBuyPersonCount: base.handleGroupBuyPersonCount,
+  dLog: base.dLog
+}
