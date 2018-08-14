@@ -25,7 +25,7 @@
   height: 120rpx;
   margin-top: 72rpx;
   border-radius: 50%;
-  background-color: rgb(253, 231, 231)
+  background-color: rgb(253, 231, 231);
 }
 
 .userinfo-nickname {
@@ -33,37 +33,65 @@
   color: #fff;
   font-size: 32rpx;
 }
-.userinfo-nickname {
-  margin-top: 18rpx;
-  color: #fff;
-  font-size: 32rpx;
+.userinfo-edit {
+  margin-top: 16rpx;
+  background-color: rgb(255, 150, 33);
+  border-radius: 30rpx;
+  height: 48rpx;
+}
+
+.edit-text {
+  font-size: 24rpx;
+  color: rgb(255, 255,255);
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
 }
 
 .function_container {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   padding-top: 64rpx;
   padding-left: 65rpx;
   padding-right: 65rpx;
 }
 
 .function_item {
-  width:33%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  box-sizing:border-box;
-  padding-bottom:48rpx;
-  border: 1px #000
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 48rpx;
+  border: 1px #000;
 }
+
+.function_message {
+  position: absolute;
+  right: -20rpx;
+  border-radius: 50%;
+  background-color: #e64340;
+  color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  top: 0;
+  padding: 2rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
 .function_img {
-  width:120rpx;
-  height:120rpx;
+  position: relative;
+  overflow: visible;
+  width: 120rpx;
+  height: 120rpx;
 }
+
 .function_name {
-  padding-top:24rpx;
-  font-size:26rpx;
-  color: rgb(89, 104, 128)
+  padding-top: 24rpx;
+  font-size: 26rpx;
+  color: rgb(89, 104, 128);
 }

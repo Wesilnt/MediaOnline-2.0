@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    functions1: [
+    reply:1,
+    sysMessage:99,
+    functions: [
       {
         "id": 1,
         "name": "已购清单",
@@ -50,23 +52,6 @@ Page({
         "id": 9,
         "name": "帮助中心",
         "pic_url": '../../images/my_help.png'
-      }
-    ],
-    functions2: [
-      {
-        "id": 12,
-        "name": "回复我的",
-        "pic_url": '../../images/ic_message.png'
-      },
-      {
-        "id": 13,
-        "name": "收到的赞",
-        "pic_url": '../../images/ic_message.png'
-      },
-      {
-        "id": 14,
-        "name": "系统通知",
-        "pic_url": '../../images/ic_message.png'
       }
     ]
   },
@@ -125,5 +110,57 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  clickUserinfo: function() {
+    console.log("to edit user info")
+  },
+  clickMyFunction: function (e) {
+    //console.log(e)
+    switch (e.currentTarget.id) {
+      case "1":
+        console.log("1")
+        break;
+      case "2":
+        console.log("2")
+        break;
+      case "3":
+        console.log("3")
+        break;
+      case "4":
+        console.log("4")
+        break;
+      case "5":
+        console.log("5")
+        break;
+      case "6":
+        console.log("6")
+        break;
+      case "7":
+        console.log("7")
+        break;
+      case "8":
+        console.log("8")
+        break;
+      case "9":
+        console.log("9")
+        break;
+      case "10":
+        console.log("10")
+        break;
+      case "11":
+        console.log("11")
+        break;
+      case "12":
+        console.log("12")
+        break;
+      case "13":
+        console.log("13")
+        break;
+      case "14":
+        console.log("14")
+        break;
+      default:
+        console.log(e);
+    }
   }
 })
