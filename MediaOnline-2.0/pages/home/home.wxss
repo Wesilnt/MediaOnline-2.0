@@ -1,1 +1,251 @@
 /* pages/home/home.wxss */
+.head{
+  width: 750rpx;
+  height: 352rpx;
+  /* position: absolute; */
+  overflow: hidden;
+}
+.banner{
+  width: 750rpx;
+  height: 352rpx;
+}
+.banneritem{
+  width: 100%;
+  height: 100%;
+}
+.bannercover{
+  background-color: white;
+  width: 104%;
+  height: 40rpx;
+  margin-top: -30rpx;
+  margin-left: -2%;
+  border-radius: 50%;
+  position: absolute;
+}
+.dots{
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.dot{
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+.dot.active{
+  background:#D9D9D9;
+}
+
+.noticebg{
+  margin-top: 48rpx; 
+  width: 100%;
+  height: 110rpx;
+}
+.notice{
+ width: 360rpx;
+ height: 80rpx;
+ background-color: rgb(56, 56, 56);
+ border-radius: 8rpx;
+ margin: auto;
+ text-align: center;
+}
+.icon{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 8rpx;
+  background-color: rgb(253, 231, 231);
+  margin: 8rpx;
+  vertical-align: middle; 
+}
+.message{
+  color: white;
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin-left: 50rpx;
+}
+.arrow{
+  width: 14rpx;
+  height: 20rpx;
+  margin-left: 60rpx;
+  margin-right: 28rpx;
+}
+.line{
+ width: 694rpx;
+ height: 2rpx;
+ background-color: rgb(238, 238, 238);
+}
+.noticeSep{
+ margin: 28rpx 28rpx 0rpx;
+ bottom: 0;
+}
+.column{
+ vertical-align: middle;
+ display: flex;
+ justify-content:space-between;
+}
+.title{
+  display: inline-block;
+  margin: 30rpx 0rpx 28rpx 36rpx;
+  padding-left: 28rpx;
+  width: 150rpx;
+  height: 54rpx;
+  font-size: 36rpx;
+  color: rgb(39, 51, 75);
+  font-weight: bolder;
+  line-height: 54rpx;
+  vertical-align: middle;
+  background: white left no-repeat;
+  background-size: 8rpx 33rpx;
+}
+.more{
+  display: inline-block;
+  margin-top: 41rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: rgb(41, 53, 76);
+  margin-right: 36rpx;
+}
+.knowledgeBg{
+  margin-left: 28rpx;
+  width: 694rpx;
+  height: 180rpx;
+  background-color: rgba(245, 245, 245, 0.5);
+  border-radius: 14rpx;
+}
+.knowledgeItem{
+  height: 90rpx;
+  width: 100%;
+  font-size: 28rpx;
+  color: rgb(22, 35, 60);
+}
+.knowledgePlay{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: middle;
+  margin: 24rpx 16rpx 24rpx 20rpx;
+}
+
+.knowledgeMidSep{
+  position: relative;
+  width: 654rpx;
+  margin: -91rpx 20rpx 0rpx;
+}
+.knowledgeSep{
+ margin: 28rpx 28rpx 0rpx;
+}
+
+.visionItem{
+  margin: 0rpx 28rpx 36rpx;
+  width: 694rpx;
+  height: 240rpx;
+}
+  ul,li{list-style: none ;}
+	ul {width: 694rpx; height:100%;}
+	li:nth-child(1) {width: 180rpx; height: 100%; float: left;position: relative;}
+	li:nth-child(2) {width: 342rpx; height: 100%; float: left;padding-left: 20px; position: relative;}
+  li:nth-child(3) {
+    width: 132rpx; height: 100%; float: left;position: relative;}
+.visionIcon{
+ width: 100%;
+ height: 100%;
+ background-color: rgb(253, 231, 231);
+ border-radius: 12rpx;
+}
+.detail{
+  display: block;
+}
+.visionTitle{
+  margin-top: 12rpx;
+  font-size: 32rpx;
+  color: rgb(68, 78, 98);
+  font-weight: bolder;
+}
+
+.visionDetail{
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: rgb(148, 154, 170);
+}
+
+.price{
+  color: rgb(255, 163, 47);
+}
+.bottomText{
+  position: relative;
+  bottom: -36rpx;
+}
+.fit{
+  margin-top: 28rpx;
+  border: rgb(218, 221, 226) 2rpx solid;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  color: rgb(170, 175, 188);
+  /* width: 104rpx; */
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.visionPlay{
+  width: 132rpx;
+  height: 70rpx;
+  margin-top: 94rpx;
+}
+
+.classroomItem{
+  background-color: rgb(253, 231, 231);
+  margin: 0rpx 28rpx 20rpx;
+  width: 694rpx;
+  height: 220rpx;
+  border-radius: 16rpx;
+}
+.classroomItemIcon{
+  width: 100%;
+  height: 100%;
+}
+.classroomPlay{
+  position: relative;
+  bottom: 81rpx;
+  left: 132rpx;
+  width: 60rpx;
+  height: 61rpx;
+}
+.books{
+  margin-right: 41rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.booksItem{
+ display: inline-block;
+ width: 196rpx;
+ height: 345rpx;
+ margin-left: 40rpx;
+ margin-bottom: 64rpx;
+}
+.booksItemIcon{
+  width: 196rpx;
+  height: 257rpx;
+  background-color: rgb(253, 231, 231);
+  border-radius: 12rpx;
+}
+.booksPlay{
+  position: absolute;
+  width: 60rpx;
+  height: 61rpx;
+  margin-left:-63rpx;
+  margin-top:193rpx;
+
+}
+.bookText{
+  margin-left: 10rpx;
+  margin-top: 6rpx;
+  display: block;
+  font-size: 24rpx;
+  background-color: white;
+}
