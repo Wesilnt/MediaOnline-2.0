@@ -1,7 +1,11 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/knowledge/knowledge",
+    "pages/classroom/classroom",
+    "pages/books/book",
+    "pages/vision/vision"
   ],
   "window": {
     "backgroundTextStyle": "light",
