@@ -1,1 +1,69 @@
-/* pages/my/my.wxss */
+.container {
+  min-height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  padding: 0rpx;
+  background: url("http://qiniu.shbaoyuantech.com/my_head_bg.png") no-repeat;
+  background-size: 750rpx 352rpx;
+  font-size: 32rpx;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.userinfo {
+  width: 750rpx;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  height: 352rpx;
+}
+
+.userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 72rpx;
+  border-radius: 50%;
+  background-color: rgb(253, 231, 231)
+}
+
+.userinfo-nickname {
+  margin-top: 18rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.userinfo-nickname {
+  margin-top: 18rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.function_container {
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+  padding-top: 64rpx;
+  padding-left: 65rpx;
+  padding-right: 65rpx;
+}
+
+.function_item {
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-sizing:border-box;
+  padding-bottom:48rpx;
+  border: 1px #000
+}
+.function_img {
+  width:120rpx;
+  height:120rpx;
+}
+.function_name {
+  padding-top:24rpx;
+  font-size:26rpx;
+  color: rgb(89, 104, 128)
+}
