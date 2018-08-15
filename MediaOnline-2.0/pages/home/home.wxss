@@ -1,4 +1,8 @@
 /* pages/home/home.wxss */
+.home-content{
+  margin-bottom: 72px;
+  transition: all .4s lienar;
+}
 .head{
   width: 750rpx;
   height: 352rpx;

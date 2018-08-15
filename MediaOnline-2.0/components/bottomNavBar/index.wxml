@@ -1,0 +1,30 @@
+<view class='navbar-wrap'>
+  <slot></slot>
+
+  <view class='navbar'>
+    <view class='navbar-bg'></view>
+    <view class='navbar-tabs'>
+      <view wx:for='{{list}}' class='tabs-item' wx:key='{{item.index}}' style='color:{{currentIndex===index?selectedColor: color}}' data-pagepath='{{item.pagePath}}' data-index='{{index}}' bind:tap='onToggle'>
+        <view>
+          <image src='{{currentIndex===index?item.selectedIconPath:item.iconPath}}' class='navbar-icon'></image>
+          {{item.text}}
+        </view>
+      </view>
+    </view>
+    <!-- 中间按钮 -->
+    <view class='navbar-btn-outer'>
+      <view class='navbar-btn' bind:tap='renderProgress'>
+        <view hidden='{{played}}'>
+          <image class='navbar-btn-icon' src='../../images/nav_tabbar_pause.png'></image>
+        </view>
+        <view hidden='{{!played}}' class='playing-centent'>
+          {{percent}}%
+        </view>
+      </view>
+
+      <view class='navbar-progress-cvs'>
+        <canvas style="width: 84px; height:84px;" canvas-id="progress"></canvas>
+      </view>
+    </view>
+  </view>
+</view>

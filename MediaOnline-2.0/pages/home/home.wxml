@@ -1,96 +1,104 @@
+<bottomNavBar currentIndex='{{currentIndex}}' percent='{{percent}}' played='{{played}}' bind:handlePlay="handlePlay" bind:toggleBar="toggleBar">
+  <view wx:if='{{currentIndex===0}}' class='home-content'>
+    <view>
+      <!-- banner -->
+      <view class='head'>
+        <swiper class='banner' current="{{swiperCurrent}}" bindchange="swiperChange" interval="2000" duration="300" circular="true" autoplay='true'>
+          <swiper-item wx:for="{{imgUrls}}" wx:key="banner">
+            <image class='banneritem' src='{{item}}'></image>
+          </swiper-item>
+        </swiper>
+        <!-- dots -->
+        <view class="dots">
+          <block wx:for="{{imgUrls}}" wx:key="dots">
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+          </block>
+        </view>
+        <!-- banner cover -->
+        <view class='bannercover'></view>
+      </view>
 
-<!-- banner -->
-<view class='head'>
-<swiper class='banner' current="{{swiperCurrent}}" bindchange="swiperChange" interval="2000" duration="300" circular="true" autoplay='true'>
-<swiper-item wx:for="{{imgUrls}}" wx:key="banner">
-<image class='banneritem' src='{{item}}'></image>
-</swiper-item>
-</swiper>
-<!-- dots -->
-<view class="dots">
-    <block wx:for="{{imgUrls}}" wx:key="dots">
-      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
-    </block>
+      <!-- message -->
+      <view class='noticebg' wx:if="{{messageCount>0}}">
+        <view class='notice'>
+          <image class='icon'></image>
+          <text class='message'>{{messageCount}}条新消息</text>
+          <image class='arrow' src='/images/home_arrow.jpg'></image>
+        </view>
+        <view class='line noticeSep'></view>
+      </view>
+
+      <!-- knowledge -->
+      <view class='column'>
+        <view class='title' style='background-image: url(/images/home_line.png)'>免费专区</view>
+        <view class='more' bindtap='enterKnowledgeList'>探索更多</view>
+      </view>
+
+      <view class='knowledgeBg'>
+        <view wx:for="{{knowledge}}" wx:key="knowledge" class='knowledgeItem' id='{{index}}' bindtap='enterKnowledgeDetail'>
+          <image class='knowledgePlay' src="/images/home_knowledge_play.png"></image>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='line knowledgeMidSep'></view>
+      </view>
+
+      <view class='line knowledgeSep'></view>
+
+      <!-- vision -->
+      <view class='column'>
+        <view class='title' style='background-image: url(/images/home_line.png)'>视野</view>
+        <view class='more' bindtap='enterVisionList'>探索更多</view>
+      </view>
+
+      <view wx:for="{{vision}}" wx:key="vision" class='visionItem'>
+        <ul bindtap='enterVisionDetail' data-visionId="{{item.id}}">
+          <li>
+            <image class='visionIcon'></image>
+          </li>
+          <li>
+            <text class='detail visionTitle'>{{item.title}}</text>
+            <text class='detail visionDetail'>{{item.des}}</text>
+            <text class='detail visionDetail'>{{item.author}}</text>
+            <text class='visionDetail price bottomText'>¥{{item.price}}</text>
+            <text class='visionDetail bottomText'>/共{{item.count}}讲</text>
+          </li>
+          <li>
+            <view class='fit'>{{item.fit}}</view>
+            <image class='visionPlay' src='/images/home_vision_paly.png'></image>
+          </li>
+        </ul>
+      </view>
+      <view class='line knowledgeSep'></view>
+
+      <!-- classroom -->
+      <view class='column'>
+        <view class='title' style='background-image: url(/images/home_line.png)'>在线课堂</view>
+        <view class='more' bindtap='enterClassroomList'>探索更多</view>
+      </view>
+
+      <view wx:for="{{imgUrls}}" wx:key="classroom" class='classroomItem' id='{{index}}' bindtap='enterClassroomDetail'>
+        <image class='classroomItemIcon' src=''></image>
+        <image class='classroomPlay' src='/images/home_classroom_play.png'></image>
+      </view>
+      <view class='line knowledgeSep'></view>
+
+      <!-- books -->
+      <view class='column'>
+        <view class='title' style='background-image: url(/images/home_line.png)'>有声书</view>
+        <view class='more' bindtap='enterBookList'>探索更多</view>
+      </view>
+
+      <view class='books'>
+        <view wx:for="{{books}}" wx:key="books" class='booksItem' id='{{index}}' bindtap='enterBookDetail'>
+          <image class='booksItemIcon' src='{{item.cover}}'></image>
+          <image class='booksPlay' src='/images/home_classroom_play.png'></image>
+          <text class='bookText'>{{item.title}}</text>
+          <text class='bookText price'>¥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
   </view>
-<!-- banner cover -->
-<view class='bannercover'></view>
-</view>
-
-<!-- message -->
-<view class='noticebg' wx:if="{{messageCount>0}}">
-<view class='notice'>
-<image class='icon'></image>
-<text class='message'>{{messageCount}}条新消息</text>
-<image class='arrow' src='/images/home_arrow.jpg'></image>
-</view>
-<view class='line noticeSep'></view>
-</view>
-
-<!-- knowledge -->
-<view class='column'>
-<view class='title' style='background-image: url(/images/home_line.png)'>免费专区</view>
-<view class='more' bindtap='enterKnowledgeList'>探索更多</view>
-</view>
-
-<view class='knowledgeBg'>
-<view wx:for= "{{knowledge}}" wx:key="knowledge" class='knowledgeItem' id='{{index}}' bindtap='enterKnowledgeDetail'>
-<image class='knowledgePlay' src= "/images/home_knowledge_play.png"></image>
-<text>{{item.title}}</text>
-</view>
-<view class='line knowledgeMidSep'></view>
-</view>
-
-<view class='line knowledgeSep'></view>
-
-<!-- vision -->
-<view class='column'>
-<view class='title' style='background-image: url(/images/home_line.png)'>视野</view>
-<view class='more' bindtap='enterVisionList'>探索更多</view>
-</view>
-
-<view wx:for="{{vision}}" wx:key="vision" class='visionItem' >
-<ul bindtap='enterVisionDetail' data-visionId="{{item.id}}">
-<li>
-<image class='visionIcon'></image>
-</li>
-<li>
-<text class='detail visionTitle'>{{item.title}}</text>
-<text class='detail visionDetail'>{{item.des}}</text>
-<text class='detail visionDetail'>{{item.author}}</text>
-<text class='visionDetail price bottomText'>¥{{item.price}}</text><text class='visionDetail bottomText'>/共{{item.count}}讲</text>
-</li>
-<li>
-<view class='fit'>{{item.fit}}</view>
-<image class='visionPlay' src='/images/home_vision_paly.png'></image>
-</li>
-</ul>
-</view>
-<view class='line knowledgeSep'></view>
-
-<!-- classroom -->
-<view class='column'>
-<view class='title' style='background-image: url(/images/home_line.png)'>在线课堂</view>
-<view class='more' bindtap='enterClassroomList'>探索更多</view>
-</view>
-
-<view wx:for="{{imgUrls}}" wx:key="classroom" class='classroomItem' id='{{index}}' bindtap='enterClassroomDetail' >
-<image class='classroomItemIcon' src=''></image>
-<image class='classroomPlay' src='/images/home_classroom_play.png'></image>
-</view>
-<view class='line knowledgeSep'></view>
-
-<!-- books -->
-<view class='column'>
-<view class='title' style='background-image: url(/images/home_line.png)'>有声书</view>
-<view class='more' bindtap='enterBookList'>探索更多</view>
-</view>
-
-<view class='books'>
-<view wx:for="{{books}}" wx:key="books" class='booksItem' id='{{index}}' bindtap='enterBookDetail'>
-<image class='booksItemIcon' src='{{item.cover}}'></image>
-<image class='booksPlay' src='/images/home_classroom_play.png'></image>
-<text class='bookText'>{{item.title}}</text>
-<text class='bookText price'>¥{{item.price}}</text>
-</view>
-</view>
-
+  <view wx:if='{{currentIndex===1}}'>
+    <view>这里是個人頁的内容</view>
+  </view>
+</bottomNavBar>
