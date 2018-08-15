@@ -1,2 +1,9 @@
-<!--pages/classroom/classroomList.wxml-->
-<text>pages/classroom/classroomList.wxml</text>
+<view class='classroom-header'>
+  <image class='classroom-header-bg' src=''>
+  </image>
+</view>
+ <view wx:for="{{7}}" wx:key="classroom" class='classroomItem' id='{{index}}' bindtap='enterClassroomDetail' >
+  <image class='classroomItemIcon' src=''></image>
+  <image class='classroomPlay' src='/images/home_classroom_play.png'></image> 
+</view> 
+<view class='classroom-bot-tip'>没有更多了,不要再拉啦~</view>

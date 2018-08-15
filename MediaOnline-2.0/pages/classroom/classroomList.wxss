@@ -1,1 +1,35 @@
-/* pages/classroom/classroomList.wxss */
+.classroom-header {
+  width: 100%;
+  height: 300rpx;
+  background-color: rgb(253, 231, 231);
+  margin-bottom: 20rpx;
+}
+.classroom-header-bg {
+  width: 100%;
+  height: 100%;
+}
+.classroomItem{
+  background-color: rgb(253, 231, 231);
+  margin:0 28rpx 20rpx;
+  height: 220rpx;
+  border-radius: 16rpx;
+}
+ .classroomItemIcon{
+  width: 100%;
+  height: 100%;
+}
+.classroomPlay{
+  position: relative;
+  bottom: 81rpx;
+  left: 132rpx;
+  width: 60rpx;
+  height: 61rpx;
+} 
+.classroom-bot-tip {
+  margin: 20rpx 28rpx;
+  text-align: center;
+  height: 160rpx;
+  color: lightgray;
+  line-height: 160rpx;
+  font-size: 28rpx;
+}
