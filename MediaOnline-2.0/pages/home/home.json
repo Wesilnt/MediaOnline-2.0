@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "bottomNavBar": "../../components/bottomNavBar/index"
-  }
+  },
+  "navigationBarTitleText": "秦汉胡同"
 }
