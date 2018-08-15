@@ -5,7 +5,11 @@
     "pages/knowledge/knowledge",
     "pages/classroom/classroom",
     "pages/books/book",
-    "pages/vision/vision"
+    "pages/vision/vision",
+    "pages/knowledge/knowledgeList",
+    "pages/vision/visionList",
+    "pages/classroom/classroomList",
+    "pages/books/bookList"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -17,10 +17,10 @@
 </view>
 
 <!-- message -->
-<view class='noticebg'>
+<view class='noticebg' wx:if="{{messageCount>0}}">
 <view class='notice'>
 <image class='icon'></image>
-<text class='message'>1条新消息</text>
+<text class='message'>{{messageCount}}条新消息</text>
 <image class='arrow' src='/images/home_arrow.jpg'></image>
 </view>
 <view class='line noticeSep'></view>
@@ -29,11 +29,11 @@
 <!-- knowledge -->
 <view class='column'>
 <view class='title' style='background-image: url(/images/home_line.png)'>免费专区</view>
-<view class='more'>探索更多</view>
+<view class='more' bindtap='enterKnowledgeList'>探索更多</view>
 </view>
 
 <view class='knowledgeBg'>
-<view wx:for= "{{knowledge}}" wx:key="knowledge" class='knowledgeItem'>
+<view wx:for= "{{knowledge}}" wx:key="knowledge" class='knowledgeItem' id='{{index}}' bindtap='enterKnowledgeDetail'>
 <image class='knowledgePlay' src= "/images/home_knowledge_play.png"></image>
 <text>{{item.title}}</text>
 </view>
@@ -45,11 +45,11 @@
 <!-- vision -->
 <view class='column'>
 <view class='title' style='background-image: url(/images/home_line.png)'>视野</view>
-<view class='more'>探索更多</view>
+<view class='more' bindtap='enterVisionList'>探索更多</view>
 </view>
 
-<view wx:for="{{vision}}" wx:key="vision" class='visionItem'>
-<ul>
+<view wx:for="{{vision}}" wx:key="vision" class='visionItem' >
+<ul bindtap='enterVisionDetail' data-visionId="{{item.id}}">
 <li>
 <image class='visionIcon'></image>
 </li>
@@ -70,10 +70,10 @@
 <!-- classroom -->
 <view class='column'>
 <view class='title' style='background-image: url(/images/home_line.png)'>在线课堂</view>
-<view class='more'>探索更多</view>
+<view class='more' bindtap='enterClassroomList'>探索更多</view>
 </view>
 
-<view wx:for="{{imgUrls}}" wx:key="classroom" class='classroomItem'>
+<view wx:for="{{imgUrls}}" wx:key="classroom" class='classroomItem' id='{{index}}' bindtap='enterClassroomDetail' >
 <image class='classroomItemIcon' src=''></image>
 <image class='classroomPlay' src='/images/home_classroom_play.png'></image>
 </view>
@@ -82,11 +82,11 @@
 <!-- books -->
 <view class='column'>
 <view class='title' style='background-image: url(/images/home_line.png)'>有声书</view>
-<view class='more'>探索更多</view>
+<view class='more' bindtap='enterBookList'>探索更多</view>
 </view>
 
 <view class='books'>
-<view wx:for="{{books}}" wx:key="books" class='booksItem'>
+<view wx:for="{{books}}" wx:key="books" class='booksItem' id='{{index}}' bindtap='enterBookDetail'>
 <image class='booksItemIcon' src='{{item.cover}}'></image>
 <image class='booksPlay' src='/images/home_classroom_play.png'></image>
 <text class='bookText'>{{item.title}}</text>

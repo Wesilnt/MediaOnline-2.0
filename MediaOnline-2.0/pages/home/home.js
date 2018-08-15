@@ -10,13 +10,14 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
+    messageCount:0,
     knowledge:[{
       title:"文学|为什么抱元科技没有食堂？",
-      id:""
+      id:1
     },
     {
       title: "艺术|名画为什么这么值钱？",
-      id: ""
+      id: 2
     }],
     vision:[{
       cover:"",
@@ -26,6 +27,7 @@ Page({
       price:"99.00",
       count:"100",
       fit:"4-6岁",
+      id:1
     },
     {
       cover: "",
@@ -35,6 +37,7 @@ Page({
       price: "99.00",
       count: "100",
       fit: "4-6岁",
+      id: 2
     },
     {
       cover: "",
@@ -44,61 +47,76 @@ Page({
       price: "99.00",
       count: "100",
       fit: "4-6岁儿童",
+      id: 3
     }],
+    classroom:[
+      { id: 1},
+      { id: 2},
+      { id: 3},
+    ],
     books:[
     {
       cover:"",
       title:"小麦的故事",
       price:"4.99",
-      isNew:true
+      isNew:true,
+      id:1
     },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: true
+        isNew: true,
+        id: 2
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: true
+        isNew: true,
+        id: 3
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: true
+        isNew: true,
+        id: 4
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: true
+        isNew: true,
+        id: 5
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: false
+        isNew: false,
+        id: 6
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: false
+        isNew: false,
+        id: 7
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: false
+        isNew: false,
+        id: 8
       },
       {
         cover: "",
         title: "小麦的故事",
         price: "4.99",
-        isNew: false
+        isNew: false,
+        id: 9
       },
     ]
   },
@@ -114,7 +132,51 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
+  enterKnowledgeList:function(e){
+    wx.navigateTo({
+      url: '../knowledge/knowledgeList',
+    })
+  },
+  enterKnowledgeDetail:function(e){
+    let knowledgeId = this.data.knowledge[e.currentTarget.id].id
+    wx.navigateTo({
+      url: '../knowledge/knowledge?id='+knowledgeId,
+    })
+  },
+  enterVisionList:function(e){
+    wx.navigateTo({
+      url: '../vision/visionList',
+    })
+  },
 
+  enterVisionDetail:function(e){
+    wx.navigateTo({
+      url: '../vision/vision?id=' + e.currentTarget.dataset.visionid,
+    })
+  },
+  enterClassroomList:function(e){
+    wx.navigateTo({
+      url: '../classroom/classroomList',
+    })
+  },
+  enterClassroomDetail:function(e){
+    console.log(e.currentTarget.id)
+    let classroomId = this.data.knowledge[e.currentTarget.id].id
+    wx.navigateTo({
+      url: '../classroom/classroom?id=' + classroomId,
+    })
+  },
+  enterBookList:function(e){
+    wx.navigateTo({
+      url: '../books/bookList',
+    })
+  },
+  enterBookDetail:function(e){
+    let bookId = this.data.books[e.currentTarget.id].id
+    wx.navigateTo({
+      url: '../books/book?id=' + bookId,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
