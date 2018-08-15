@@ -1,2 +1,27 @@
-<!--pages/vision/visionList.wxml-->
-<text>pages/vision/visionList.wxml</text>
+<view class='head'>
+</view>
+
+<view class='list'>
+<view wx:for="{{vision}}" wx:key="vision" class='visionItem' >
+
+<view class='visionCell'>
+<ul bindtap='enterVisionDetail' data-visionId="{{item.id}}">
+<li>
+<image class='visionIcon'></image>
+</li>
+<li>
+<text class='detail visionTitle'>{{item.title}}</text>
+<text class='detail visionDetail'>{{item.des}}</text>
+<text class='detail visionDetail'>{{item.author}}</text>
+<text class='visionDetail price bottomText'>¥{{item.price}}</text><text class='visionDetail bottomText'>/共{{item.count}}讲</text>
+</li>
+<li>
+<view class='fit'>{{item.fit}}</view>
+<image class='visionPlay' src='/images/home_vision_paly.png'></image>
+</li>
+</ul>
+</view>
+<view class='line'></view>
+</view>
+</view>
+<view class='space-bottom'>没有更多了，不要再拉啦~</view>
